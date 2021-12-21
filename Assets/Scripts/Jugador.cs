@@ -23,7 +23,10 @@ public class Jugador : MonoBehaviour
         Vector2 posicionSiguiente = transform.position;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
             direccion = -1;
+        } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+            direccion = 1;
         }
+
         posicionSiguiente.x += direccion * VELOCIDAD * Time.deltaTime;
         transform.position = posicionSiguiente;
     }
