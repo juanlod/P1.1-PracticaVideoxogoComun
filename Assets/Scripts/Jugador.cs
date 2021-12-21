@@ -17,6 +17,7 @@ public class Jugador : MonoBehaviour
     {
         MoverJugador(); 
         RotarSprite();
+
     }
 
     private void MoverJugador(){
