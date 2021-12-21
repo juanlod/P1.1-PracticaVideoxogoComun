@@ -9,9 +9,11 @@ public class Jugador : MonoBehaviour
 
     public float FUERZA_SALTO = 10;
     float direccion;
+
+      private Rigidbody2D cuerpo;
     void Start()
     {
-        
+         this.cuerpo = GetComponent<Rigidbody2D>(); 
     }
 
     // Update is called once per frame
@@ -50,4 +52,6 @@ public class Jugador : MonoBehaviour
     private void Saltar(){
         cuerpo.velocity = Vector2.up * FUERZA_SALTO;
     }
+
+    
 }
