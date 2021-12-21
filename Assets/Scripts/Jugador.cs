@@ -16,6 +16,7 @@ public class Jugador : MonoBehaviour
     void Update()
     {
         MoverJugador(); 
+        RotarSprite();
     }
 
     private void MoverJugador(){
@@ -29,5 +30,14 @@ public class Jugador : MonoBehaviour
 
         posicionSiguiente.x += direccion * VELOCIDAD * Time.deltaTime;
         transform.position = posicionSiguiente;
+    }
+    private void RotarSprite(){
+        Vector3 escalaLocal = transform.localScale;
+        if (direccion == -1){
+            escalaLocal.x = Mathf.Abs(escalaLocal.x) * -1;
+        } else if (direccion == 1){
+            escalaLocal.x = Mathf.Abs(escalaLocal.x);
+        }
+        transform.localScale = escalaLocal;
     }
 }
