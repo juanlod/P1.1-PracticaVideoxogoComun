@@ -8,14 +8,19 @@ public class Jugador : MonoBehaviour
     public float VELOCIDAD = 5;
 
     public float FUERZA_SALTO = 10;
+
+    public LayerMask mascaraSuelo;
     float direccion;
 
-      private Rigidbody2D cuerpo;
+    private Rigidbody2D cuerpo;
 
-      private CapsuleCollider2D colisionador;
+    private CapsuleCollider2D colisionador;
+
+
     void Start()
     {
          this.cuerpo = GetComponent<Rigidbody2D>(); 
+         this.colisionador = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -57,7 +62,7 @@ public class Jugador : MonoBehaviour
 
     private bool ComprobarSuelo(){
         float desfase = 0.01f;
-        RaycastHit2D golpe  = Physics2D.Raycast(this.colisionador.bounds.center, Vector2.down, this.colisionador.bounds.extents.y + desfase  );
+        RaycastHit2D golpe  = Physics2D.Raycast(this.colisionador.bounds.center, Vector2.down, this.colisionador.bounds.extents.y + desfase , mascaraSuelo );
         return golpe.collider != null;
     }
 }
