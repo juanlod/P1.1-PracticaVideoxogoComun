@@ -11,6 +11,8 @@ public class Jugador : MonoBehaviour
     float direccion;
 
       private Rigidbody2D cuerpo;
+
+      private CapsuleCollider2D colisionador;
     void Start()
     {
          this.cuerpo = GetComponent<Rigidbody2D>(); 
