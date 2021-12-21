@@ -6,6 +6,8 @@ public class Jugador : MonoBehaviour
 {
     // Start is called before the first frame update
     public float VELOCIDAD = 5;
+
+    public float FUERZA_SALTO = 10;
     float direccion;
     void Start()
     {
@@ -18,6 +20,9 @@ public class Jugador : MonoBehaviour
         MoverJugador(); 
         RotarSprite();
 
+        if (Input.GetKey(KeyCode.Space)){
+           Saltar();
+       }
     }
 
     private void MoverJugador(){
@@ -40,5 +45,9 @@ public class Jugador : MonoBehaviour
             escalaLocal.x = Mathf.Abs(escalaLocal.x);
         }
         transform.localScale = escalaLocal;
+    }
+
+    private void Saltar(){
+        cuerpo.velocity = Vector2.up * FUERZA_SALTO;
     }
 }
