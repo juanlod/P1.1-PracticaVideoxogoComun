@@ -24,7 +24,7 @@ public class Jugador : MonoBehaviour
         MoverJugador(); 
         RotarSprite();
 
-        if (Input.GetKey(KeyCode.Space)){
+        if (Input.GetKey(KeyCode.Space) && ComprobarSuelo()){
            Saltar();
        }
     }
@@ -55,5 +55,9 @@ public class Jugador : MonoBehaviour
         cuerpo.velocity = Vector2.up * FUERZA_SALTO;
     }
 
-    
+    private bool ComprobarSuelo(){
+        float desfase = 0.01f;
+        RaycastHit2D golpe  = Physics2D.Raycast(this.colisionador.bounds.center, Vector2.down, this.colisionador.bounds.extents.y + desfase  );
+        return golpe.collider != null;
+    }
 }
