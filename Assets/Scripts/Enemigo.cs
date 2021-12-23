@@ -18,6 +18,10 @@ public class Enemigo : MonoBehaviour
     void Update()
     {
         MoverEnemigo();
+        if (contador < 0){
+            CambiarDireccion();
+        }
+        contador -= Time.deltaTime;
     }
 
     private void MoverEnemigo(){
@@ -31,5 +35,6 @@ public class Enemigo : MonoBehaviour
 
     private void CambiarDireccion(){
         direccion *= -1;
+        contador = Random.Range(0.5f, 2.5f);
     }
 }
