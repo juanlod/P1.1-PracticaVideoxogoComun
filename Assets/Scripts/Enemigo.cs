@@ -22,10 +22,8 @@ public class Enemigo : MonoBehaviour
     private void MoverEnemigo(){
         Vector3 escala = transform.localScale;
         Vector2 posicion = transform.position;
-        if (direccion == -1){
-            posicion.x += VELOCIDAD * direccion * Time.deltaTime;
-            escala.x = Mathf.Abs(escala.x) * direccion;
-        }
+        posicion.x += VELOCIDAD * direccion * Time.deltaTime;
+        escala.x = Mathf.Abs(escala.x) * direccion;
         transform.position = posicion;
         transform.localScale = escala;
     }
