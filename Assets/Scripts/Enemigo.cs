@@ -6,7 +6,8 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
     public float VELOCIDAD = 3f;
-    public float direccion = -1;
+    public int direccion = -1;
+    private float contador = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,9 @@ public class Enemigo : MonoBehaviour
         escala.x = Mathf.Abs(escala.x) * direccion;
         transform.position = posicion;
         transform.localScale = escala;
+    }
+
+    private void CambiarDireccion(){
+        direccion *= -1;
     }
 }
