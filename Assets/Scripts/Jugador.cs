@@ -65,4 +65,6 @@ public class Jugador : MonoBehaviour
         RaycastHit2D golpe  = Physics2D.Raycast(this.colisionador.bounds.center, Vector2.down, this.colisionador.bounds.extents.y + desfase , mascaraSuelo );
         return golpe.collider != null;
     }
+
+    
 }
