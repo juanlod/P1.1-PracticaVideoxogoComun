@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ControladorJuego : MonoBehaviour
 {
-    public static ControladorJuego controladorJuego;
+    public static ControladorJuego instancia {get; private set;}
     public Transform posicionRespawn;
+
+    void Awake(){
+        instancia = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

@@ -66,5 +66,7 @@ public class Jugador : MonoBehaviour
         return golpe.collider != null;
     }
 
-    
+    private void Morir(){
+        
+    }
 }
