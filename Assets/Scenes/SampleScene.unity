@@ -11079,8 +11079,9 @@ GameObject:
   - component: {fileID: 2032037643}
   - component: {fileID: 2032037642}
   - component: {fileID: 2032037647}
+  - component: {fileID: 2032037648}
   m_Layer: 0
-  m_Name: opossum-1
+  m_Name: Enemigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11224,3 +11225,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bde40c6d694cf74aa771c832832723b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2032037648
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032037641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23e4727b0eeaebd4cbf3e3d95fe37cdb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
