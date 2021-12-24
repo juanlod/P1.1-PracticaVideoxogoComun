@@ -21,7 +21,7 @@ public class MuerteJugador : MonoBehaviour
         Jugador jugador = colision.gameObject.GetComponent<Jugador>();
 
         if (jugador != null){
-            Debug.Log("El jugador ha chocado");
+            jugador.Morir();
         }
     }
 }

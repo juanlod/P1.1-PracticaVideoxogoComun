@@ -66,7 +66,7 @@ public class Jugador : MonoBehaviour
         return golpe.collider != null;
     }
 
-    private void Morir(){
-        
+    public void Morir(){
+        this.transform.position = ControladorJuego.instancia.posicionRespawn.position;
     }
 }
