@@ -31,7 +31,8 @@ public class Jugador : MonoBehaviour
         MoverJugador(); 
         RotarSprite();
 
-        if (Input.GetKey(KeyCode.Space) && ComprobarSuelo()){
+        bool isSuelo = ComprobarSuelo();
+        if (Input.GetKey(KeyCode.Space) && isSuelo){
            Saltar();
        }
     }
@@ -64,6 +65,7 @@ public class Jugador : MonoBehaviour
 
     private void Saltar(){
         cuerpo.velocity = Vector2.up * FUERZA_SALTO;
+        animator.SetBool("isSaltando", true);
     }
 
     private bool ComprobarSuelo(){
