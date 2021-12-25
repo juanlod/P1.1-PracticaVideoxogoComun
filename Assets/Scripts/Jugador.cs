@@ -13,6 +13,7 @@ public class Jugador : MonoBehaviour
     float direccion;
 
     private Rigidbody2D cuerpo;
+    private Animator animator;
 
     private CapsuleCollider2D colisionador;
 
@@ -21,6 +22,7 @@ public class Jugador : MonoBehaviour
     {
          this.cuerpo = GetComponent<Rigidbody2D>(); 
          this.colisionador = GetComponent<CapsuleCollider2D>();
+         this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
