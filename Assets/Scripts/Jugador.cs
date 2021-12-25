@@ -35,6 +35,11 @@ public class Jugador : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isSuelo){
            Saltar();
        }
+
+       if (cuerpo.velocity.y < 0){
+           animator.SetBool("isCayendo", true);
+           animator.SetBool("isSaltando", false);
+       }
     }
 
     private void MoverJugador(){
