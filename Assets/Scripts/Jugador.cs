@@ -41,8 +41,12 @@ public class Jugador : MonoBehaviour
         Vector2 posicionSiguiente = transform.position;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
             direccion = -1;
+            animator.SetBool("isCorriendo", true);
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
             direccion = 1;
+            animator.SetBool("isCorriendo", true);
+        } else {
+            animator.SetBool("isCorriendo", false);
         }
 
         posicionSiguiente.x += direccion * VELOCIDAD * Time.deltaTime;
