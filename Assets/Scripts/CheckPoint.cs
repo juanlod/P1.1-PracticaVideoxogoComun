@@ -20,7 +20,9 @@ public class CheckPoint : MonoBehaviour
         Jugador jugador = colisionador.gameObject.GetComponent<Jugador>();
 
         if (jugador != null){
-            Debug.Log("Checkpoint numero " + numeroCheckPoint);
+            if (numeroCheckPoint > ControladorJuego.instancia.indiceRespawn){
+                ControladorJuego.instancia.indiceRespawn = this.numeroCheckPoint;
+            }
         }
     }
 }
