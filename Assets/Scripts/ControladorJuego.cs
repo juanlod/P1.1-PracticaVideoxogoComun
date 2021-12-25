@@ -5,7 +5,9 @@ using UnityEngine;
 public class ControladorJuego : MonoBehaviour
 {
     public static ControladorJuego instancia {get; private set;}
-    public Transform posicionRespawn;
+    public List<Transform> posicionRespawn;
+
+    public int indiceRespawn = 0;
 
     void Awake(){
         instancia = this;

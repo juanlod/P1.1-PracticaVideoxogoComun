@@ -100,6 +100,7 @@ public class Jugador : MonoBehaviour
 
 	public void Morir()
 	{
-		this.transform.position = ControladorJuego.instancia.posicionRespawn.position;
+        int indiceRespawn = ControladorJuego.instancia.indiceRespawn;
+		this.transform.position = ControladorJuego.instancia.posicionRespawn[indiceRespawn].position;
 	}
 }
